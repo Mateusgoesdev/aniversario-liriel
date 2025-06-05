@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive;
+  background: linear-gradient(135deg, #ffe6f5, #e0ffff);
+  overflow-x: hidden;
+  color: #333;
+  position: relative;
+}
+
+.hearts-background {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.destaque {
+  text-align: center;
+  padding: 20px;
+  z-index: 2;
+  position: relative;
+}
+
+.destaque img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #ff69b4;
+  box-shadow: 0 0 20px #ffb6c1;
+  margin-bottom: 15px;
+}
+
+.destaque h1 {
+  font-size: 2em;
+  color: #ff1493;
+  margin: 0;
+}
+
+.carrossel {
+  width: 100%;
+  overflow: hidden;
+  margin: 30px 0;
+  border-radius: 20px;
+  box-shadow: 0 0 15px #ffd1dc;
+}
+
+.slides {
+  display: flex;
+  width: 300%;
+  animation: slide 12s infinite;
+}
+
+.slides img {
+  width: 100%;
+  object-fit: cover;
+}
+
+@keyframes slide {
+  0%, 20% { transform: translateX(0); }
+  33%, 53% { transform: translateX(-100%); }
+  66%, 86% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+.mensagem {
+  text-align: center;
+  padding: 25px;
+  background: #fff0f5;
+  margin: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px #ffc0cb;
+  position: relative;
+  z-index: 1;
+}
+
+.mensagem h2 {
+  color: #db3eb1;
+  margin-bottom: 10px;
+}
+
+.mensagem p {
+  font-size: 1.1em;
+  color: #444;
+  line-height: 1.6em;
+}
+
+/* Corações animados */
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: pink;
+  transform: rotate(45deg);
+  animation: float 6s infinite ease-in;
+  z-index: 0;
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: pink;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .destaque img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .mensagem {
+    margin: 20px 10px;
+    font-size: 0.95em;
+  }
+}
