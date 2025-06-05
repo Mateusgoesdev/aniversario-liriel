@@ -49,14 +49,14 @@ body {
 .slides {
   display: flex;
   width: 300%;
-  animation: slide 12s infinite;
+  animation: slide 20s infinite;
 }
 
 .slides img {
   width: 100%;
   object-fit: cover;
-  width: 400px;
-  height:400px;
+  width: 500px;
+  height:500px;
 }
 
 @keyframes slide {
@@ -132,12 +132,12 @@ body {
 
 @media (max-width: 600px) {
   .destaque img {
-    width: 130px;
-    height: 130px;
+    width: 100px;
+    height: 100px;
   }
 
   .mensagem {
     margin: 20px 10px;
-    font-size: 0.95em;
+    font-size: 1em;
   }
 }
